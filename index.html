@@ -274,10 +274,10 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:12px 2
   <div class="section">
     <div class="sectionTitle">Submit Your <span>Monster</span></div>
     <div class="sectionSub">// UNLEASH YOUR CREATURE ON THE WORLD //</div>
-    <div class="formSection">
+    <form class="formSection" action="https://formspree.io/f/xojzqpqb" method="POST" enctype="multipart/form-data">
       <div class="formGroup">
         <label class="formLabel">Artwork Title *</label>
-        <input class="formInput" type="text" placeholder="Give your monster a name...">
+        <input class="formInput" type="text" name="title" placeholder="Give your monster a name...">
       </div>
       <div class="formGroup">
         <label class="formLabel">Category *</label>
@@ -285,15 +285,16 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:12px 2
       </div>
       <div class="formGroup">
         <label class="formLabel">Description</label>
-        <textarea class="formTextarea" placeholder="Tell us about your creature — its origin, powers, world..."></textarea>
+        <textarea class="formTextarea" name="description" placeholder="Tell us about your creature – its origin, powers, world..."></textarea>
       </div>
       <div class="formGroup">
         <label class="formLabel">Upload Artwork *</label>
-        <div class="uploadZone" onclick="showNotif('File upload ready in full version!')">
-          <div class="uploadIcon">🎨</div>
-          <div class="uploadText">// DROP FILES HERE OR CLICK TO BROWSE //<br><br>JPG · PNG · GIF · MP4 · MAX 50MB</div>
+        <label class="uploadZone" style="cursor: pointer; display: block;">
+  <div class="uploadIcon">🎨</div>
+  <div class="uploadText">// CLICK TO CHOOSE FILES <br><br>JPG · PNG · GIF · MP4 · MAX 50MB</div>
+  <input type="file" name="artwork" accept="image/*,video/*" style="display: none;" required>
+</label>
         </div>
-      </div>
       <div class="formGroup">
         <label class="formLabel">Price (Optional — Leave blank if NFS)</label>
         <input class="formInput" type="text" placeholder="$">
@@ -310,6 +311,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:12px 2
       <button class="btnPrimary" onclick="showNotif('Submission received! Pending review.')">Submit Creature →</button>
     </div>
   </div>
+  </form>
 </div>
 
 <!-- INCUBATOR -->
