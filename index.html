@@ -424,7 +424,7 @@ function renderFeatured(){
   const g=document.getElementById('featuredGrid');
   g.innerHTML=artworks.slice(0,4).map(a=>`
     <div class="artCard" style="background:${a.bg}">
-      <div class="artThumb" style="background:${a.bg}">${a.emoji}
+      <div class="artThumb" style="background:${a.bg}">${a.image ? `<img src="${a.image}" style="width:100%; height:100%; object-fit:contain;">` : a.emoji}</div>
         <div class="artOverlay">
           <button class="voteBtn" onclick="castVote(event,'${a.title}')">Vote</button>
           <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:#aaa;letter-spacing:2px">${a.votes} votes</div>
